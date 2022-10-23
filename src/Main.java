@@ -1,10 +1,25 @@
 import transport.Car;
 import transport.Train;
+import transport.Bus;
 
 public class Main {
     public static void main(String[] args) {
         //createCar();
-        createTrain();
+        //createTrain();
+        createBus();
+    }
+
+    private static void createBus() {
+        System.out.println("Создаем автобусы:");
+
+        Bus ikarus =  new Bus("Икарус", "марка икарус", 1980, "Россия", "красный", 90);
+        System.out.println(ikarus);
+
+        Bus skaniy =  new Bus("Скания", "марка скания", 2010, "Европа", "белый", 180);
+        System.out.println(skaniy);
+
+        Bus mers =  new Bus("Мерседес", "Мерседес Бенс", 2020, "Германия", "", 220);
+        System.out.println(mers);
     }
 
     private static void createTrain() {

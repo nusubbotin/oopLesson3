@@ -75,4 +75,13 @@ public class Transport {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Бренд: "+ this.brand
+                + "; Модель: " + this.model
+                + "; Цвет кузова: " + this.color
+                + "; Год производства: " + this.productionYear
+                + "; Страна сборки: " + this.productionCountry
+                + "; Скорость: " + this.speed;
+    }
 }
