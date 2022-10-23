@@ -209,4 +209,8 @@ public class Car extends Transport {
                 + "; Скорость: " + this.speed
                 + "; Сведения о страховке: (" + this.insurance + ")";
     }
+
+    public void refill(){
+        System.out.println("Автомобиль можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках, если это электрокар.");
+    }
 }

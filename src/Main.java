@@ -4,8 +4,8 @@ import transport.Bus;
 
 public class Main {
     public static void main(String[] args) {
-        //createCar();
-        //createTrain();
+        createCar();
+        createTrain();
         createBus();
     }
 
@@ -20,6 +20,7 @@ public class Main {
 
         Bus mers =  new Bus("Мерседес", "Мерседес Бенс", 2020, "Германия", "", 220);
         System.out.println(mers);
+        mers.refill();
     }
 
     private static void createTrain() {
@@ -30,6 +31,7 @@ public class Main {
 
         Train lenGrad = new Train("Ленинград", "D-125", 2019, "России", "", 270,1700, 2, "Ленинградский вокзал", "Ленинград-Пассажирский", 8);
         System.out.println(lenGrad);
+        lenGrad.refill();
     }
 
     private static void createCar() {
@@ -65,7 +67,7 @@ public class Main {
 
         Car.Key key = hyundai.new Key(true, true);
         hyundai.setKey(key);
-
+        hyundai.refill();
         //Car.Key key2 = hyundai.new Key(true, false);
         //hyundai.setKey(key2);
     }

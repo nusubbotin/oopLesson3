@@ -1,6 +1,6 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
     protected String brand;
     protected String model;
     protected int productionYear;
@@ -84,4 +84,6 @@ public class Transport {
                 + "; Страна сборки: " + this.productionCountry
                 + "; Скорость: " + this.speed;
     }
+
+    public abstract void refill();
 }

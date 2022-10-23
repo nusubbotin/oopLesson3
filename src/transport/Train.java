@@ -93,4 +93,8 @@ public class Train extends Transport {
                 + "; Количество вагонов: " + this.wagonsCnt
                 ;
     }
+
+    public void refill(){
+        System.out.println("Поезд нужно заправлять дизелем");
+    }
 }
