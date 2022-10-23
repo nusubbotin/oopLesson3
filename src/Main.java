@@ -1,8 +1,20 @@
 import transport.Car;
+import transport.Train;
 
 public class Main {
     public static void main(String[] args) {
-        createCar();
+        //createCar();
+        createTrain();
+    }
+
+    private static void createTrain() {
+        System.out.println("Создаем поездки:");
+
+        Train lastochka = new Train("Ласточка", "B-901", 2011, "России", "", 301,3500, 24, "Белоруссий вокзал", "Минск-Пассажирский", 11);
+        System.out.println(lastochka);
+
+        Train lenGrad = new Train("Ленинград", "D-125", 2019, "России", "", 270,1700, 2, "Ленинградский вокзал", "Ленинград-Пассажирский", 8);
+        System.out.println(lenGrad);
     }
 
     private static void createCar() {
