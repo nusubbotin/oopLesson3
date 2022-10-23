@@ -1,12 +1,49 @@
-import transport.Car;
-import transport.Train;
-import transport.Bus;
+import transport.*;
+import animals.*;
 
 public class Main {
     public static void main(String[] args) {
-        createCar();
-        createTrain();
-        createBus();
+        //createCar();
+        //createTrain();
+        //createBus();
+        createAnimals();
+    }
+
+    private static void createAnimals() {
+        Herbivores gazel = new Herbivores("Газель", 50, "степи", 100, "трава луговая");
+        Herbivores ziraf = new Herbivores("Жираф", 100, "степи", 50, "трава луговая");
+        Herbivores loshad = new Herbivores("Лошадь", 40, "смешанный лес", 60, "трава луговая");
+
+        Predator giena = new Predator("Гиена", 30, "лес", 40, "живностью");
+        Predator tigr = new Predator("Тигр", 33, "лес", 40, "живностью");
+        Predator mishka = new Predator("Медведь", 60, "лес", 20, "рыба");
+
+        Amphibians lygushka = new Amphibians("Лягушка", 5, "болото");
+        Amphibians uchPresnovodniy = new Amphibians("Уж пресноводный", 7, "река");
+
+        NotFlyingBird pavlin = new NotFlyingBird("Павлин", 10, "река", "короткие взлеты над водой");
+        NotFlyingBird dodo = new NotFlyingBird("Додо", 10, "река", "короткие взлеты над водой");
+
+        FlyingBird chyka = new FlyingBird("Чайка", 3, "природа", "перелеты");
+        FlyingBird albatros = new FlyingBird("Альбатрос", 5, "дикая природа", "перелеты");
+        FlyingBird sokol = new FlyingBird("Сокол", 5, "дикая природа", "перелеты");
+
+        Animals [] animals = {gazel, ziraf, loshad, giena, tigr, mishka, lygushka, uchPresnovodniy, pavlin, dodo, chyka, albatros, sokol};
+
+        for (Animals animal : animals) {
+            System.out.println(animal.getClass());
+            System.out.println(animal);
+        }
+
+
+        for (int i = 0; i < animals.length; i++) {
+            for (int j = i+1; j < animals.length; j++) {
+                if (animals[i].equals(animals[j])) {
+                    System.out.println("Наш животный мир не уникален! Есть клоны!");
+                    break;
+                }
+            }
+        }
     }
 
     private static void createBus() {
