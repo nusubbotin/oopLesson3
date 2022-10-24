@@ -37,16 +37,6 @@ public abstract class Bird extends Animals{
     protected abstract void move();
 
     @Override
-    public String toString() {
-        return "Bird{" +
-                "moveType='" + moveType + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", ageYears=" + ageYears +
-                ", livingEnvironment='" + livingEnvironment + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

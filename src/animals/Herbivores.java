@@ -1,5 +1,7 @@
 package animals;
 
+import java.util.Objects;
+
 public class Herbivores extends Mammals {
 
     public Herbivores(String nickname, int ageYears, String livingEnvironment, int speed, String foodType) {
@@ -20,5 +22,29 @@ public class Herbivores extends Mammals {
 
     protected void move() {
         System.out.println("Травоядные малоподвижны");
+    }
+
+    @Override
+    public String toString() {
+        return "Herbivores{" +
+                "speed=" + speed +
+                ", foodType='" + foodType + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", ageYears=" + ageYears +
+                ", livingEnvironment='" + livingEnvironment + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode());
     }
 }
