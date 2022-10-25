@@ -16,76 +16,10 @@ public class Car extends Transport {
     private int numberOfSeats;
     private String carTires;
 
-    public class Key {
-        private boolean remoteEngineStart;
-        private boolean keylessEntry;
-
-        public Key(boolean remoteEngineStart, boolean keylessEntry) {
-            this.remoteEngineStart = remoteEngineStart;
-            this.keylessEntry = keylessEntry;
-        }
-
-        public boolean isRemoteEngineStart() {
-            return remoteEngineStart;
-        }
-
-        public boolean isKeylessEntry() {
-            return keylessEntry;
-        }
-    }
-
-    public class Insurance {
-        private int validityYear;
-        private float price;
-        private String number;
-
-        public Insurance(int validityYear, float price, String number) {
-            if (validityYear <= 0) {
-                throw new IllegalArgumentException("Срок действия должен быть положительным целым числом");
-            }else {
-                this.validityYear = validityYear;
-            }
-
-            if (price <= 0) {
-                throw new IllegalArgumentException("Стоимость должена быть положительным числом");
-            }else {
-                this.price = price;
-            }
-
-            if (number == null || number.isEmpty()) {
-                throw new IllegalArgumentException("Номер страховки доджен быть заполнен");
-            } else if (!checkNumberLength(number)) {
-                throw new IllegalArgumentException("Номер страховки должен состоять из 9 символов");
-            } else {
-                this.number = number;
-            }
-        }
-
-        private boolean checkNumberLength(String number){
-            if (number != null && number.length() != 9){
-                return false;
-            }else {
-                return true;
-            }
-        }
-
-        public void  checkExpired() {
-            if (this.validityYear >= LocalDate.now().getYear()){
-                System.out.println("Срочно ехать оформлять новую страховку!");
-            }
-        }
-
-        @Override
-        public String toString() {
-            return  "validityYear= " + validityYear +
-                    ", price= " + price +
-                    ", number= " + number;
-        }
-    }
-
     private Key key;
 
     private Insurance insurance;
+
 
     public Car(String brand, String model, float engineVolume, String color, int productionYear, String productionCountry, String transmission, String bodyType, String registrationNumber, int numberOfSeats, String carTires, int speed) {
         super(brand, model, productionYear, productionCountry, color, speed);
@@ -212,5 +146,72 @@ public class Car extends Transport {
 
     public void refill(){
         System.out.println("Автомобиль можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках, если это электрокар.");
+    }
+
+    public class Key {
+        private boolean remoteEngineStart;
+        private boolean keylessEntry;
+
+        public Key(boolean remoteEngineStart, boolean keylessEntry) {
+            this.remoteEngineStart = remoteEngineStart;
+            this.keylessEntry = keylessEntry;
+        }
+
+        public boolean isRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+        public boolean isKeylessEntry() {
+            return keylessEntry;
+        }
+    }
+
+    public class Insurance {
+        private int validityYear;
+        private float price;
+        private String number;
+
+        public Insurance(int validityYear, float price, String number) {
+            if (validityYear <= 0) {
+                throw new IllegalArgumentException("Срок действия должен быть положительным целым числом");
+            }else {
+                this.validityYear = validityYear;
+            }
+
+            if (price <= 0) {
+                throw new IllegalArgumentException("Стоимость должена быть положительным числом");
+            }else {
+                this.price = price;
+            }
+
+            if (number == null || number.isEmpty()) {
+                throw new IllegalArgumentException("Номер страховки доджен быть заполнен");
+            } else if (!checkNumberLength(number)) {
+                throw new IllegalArgumentException("Номер страховки должен состоять из 9 символов");
+            } else {
+                this.number = number;
+            }
+        }
+
+        private boolean checkNumberLength(String number){
+            if (number != null && number.length() != 9){
+                return false;
+            }else {
+                return true;
+            }
+        }
+
+        public void  checkExpired() {
+            if (this.validityYear >= LocalDate.now().getYear()){
+                System.out.println("Срочно ехать оформлять новую страховку!");
+            }
+        }
+
+        @Override
+        public String toString() {
+            return  "validityYear= " + validityYear +
+                    ", price= " + price +
+                    ", number= " + number;
+        }
     }
 }
